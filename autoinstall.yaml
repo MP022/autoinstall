@@ -1,48 +1,49 @@
+#cloud-config
 autoinstall:
-  version: 1
-  identity:
-      realname: CRC
-      hostname: tiete
-      username: crc
-      password: '$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8lFjfXfc671BZcGWkPOmaDONGAhGSg3'
-  locale: pt_BR.utf8
-  keyboard:
-      layout: br
-  timezone: "America/Sao_Paulo"   
-  packages:
-      - libreoffice
-      - gimp
-      - git
-      - wget
-      - build-essential
-      - vim
-      - curl
-      - wget
-      - virtualbox
-      - net-tools
-      - python3-pip
-      - liballegro5-dev
-      - docker.io
-      - docker-compose
-  snaps:
-      - name: audacity
-        channel: stable
-        classic: false
-      - name: code
-      	channel: stable
-      	classic: false
-      - name: blender
-      	channel: stable
-      	classic: false
-      - name: htop
-      	channel: stable
-      	classic: false
-      - name: anjuta
-      	channel: stable
-      	classic: true
-  codecs:
-      install: true
-  drivers:
-      install: true
-  updates: all
-  shutdown: reboot
+    version: 1
+    identity:
+        realname: CRC
+        hostname: tiete
+        username: crc
+        password: '$y$j9T$uhkxlm8nUQaNu.6rl4k2d.$DIldpYy96OHg8lFjfXfc671BZcGWkPOmaDONGAhGSg3'
+    locale: pt_BR.utf8
+    keyboard:
+        layout: br
+    timezone: "America/Sao_Paulo"   
+    packages:
+        - libreoffice
+        - gimp
+        - git
+        - wget
+        - build-essential
+        - vim
+        - curl
+        - wget
+        - virtualbox
+        - net-tools
+        - python3-pip
+        - liballegro5-dev
+        - docker.io
+        - docker-compose
+    snaps:
+        - name: audacity
+          channel: stable
+          classic: false
+        - name: code
+          channel: stable
+      	  classic: false
+        - name: blender
+      	  channel: stable
+      	  classic: false
+        - name: htop
+      	  channel: stable
+      	  classic: false
+        - name: anjuta
+      	  channel: stable
+      	  classic: true
+    codecs:
+        install: true
+    drivers:
+        install: true
+    updates: all
+    shutdown: reboot
