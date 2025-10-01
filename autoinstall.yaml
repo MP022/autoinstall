@@ -31,16 +31,16 @@ autoinstall:
           classic: false
         - name: code
           channel: stable
-      	  classic: false
+          classic: false
         - name: blender
-      	  channel: stable
-      	  classic: false
+          channel: stable
+          classic: false
         - name: htop
-      	  channel: stable
-      	  classic: false
+          channel: stable
+          classic: false
         - name: anjuta
-      	  channel: stable
-      	  classic: true
+          channel: stable
+          classic: true
     codecs:
         install: true
     drivers:
