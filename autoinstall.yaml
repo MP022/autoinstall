@@ -27,17 +27,17 @@ autoinstall:
         - docker-compose
     snaps:
         - name: audacity
-          channel: stable
-          classic: false
-        - name: code
-          channel: stable
-          classic: true
+        - name: htop
         - name: blender
           channel: stable
           classic: true
-        - name: htop
+        - name: code
           channel: stable
-          classic: false
+          classic: true
+    late-commands:
+        - snap install blender --classic
+        - snap install code --classic 
+        - snap install htop
     codecs:
         install: true
     drivers:
