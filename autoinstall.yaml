@@ -35,9 +35,9 @@ autoinstall:
           channel: stable
           classic: true
     late-commands:
-        - snap install blender --classic
-        - snap install code --classic 
-        - snap install htop
+        - sudo snap install blender --classic
+        - sudo snap install code --classic 
+        - sudo snap install htop
     codecs:
         install: true
     drivers:
