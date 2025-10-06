@@ -11,33 +11,35 @@ autoinstall:
         layout: br
     timezone: "America/Sao_Paulo"   
     packages:
-        - libreoffice
-        - gimp
         - git
-        - wget
-        - build-essential
         - vim
         - curl
+        - gimp
+        - htop
         - wget
-        - virtualbox
-        - net-tools
-        - python3-pip
-        - liballegro5-dev
+        - xterm
         - docker.io
+        - net-tools
+        - codeblocks
+        - clusterssh
+        - virtualbox
+        - python3-pip
+        - libreoffice
         - docker-compose
+        - build-essential
+        - liballegro5-dev
     snaps:
         - name: audacity
-        - name: htop
-        - name: blender
-          channel: stable
-          classic: true
         - name: code
           channel: stable
           classic: true
+        - name: blender
+          channel: stable
+          classic: true
     late-commands:
-        - sudo snap install blender --classic
+        - sudo snap install audacity
         - sudo snap install code --classic 
-        - sudo snap install htop
+        - sudo snap install blender --classic
     codecs:
         install: true
     drivers:
