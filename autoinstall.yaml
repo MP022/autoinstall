@@ -17,17 +17,30 @@ autoinstall:
         - gimp
         - htop
         - wget
+        - meld
+        - plank
         - xterm
+        - magnus
+        - prerex
+        - vprerex
+        - sharutils
         - docker.io
         - net-tools
         - codeblocks
         - clusterssh
         - virtualbox
+        - cpu-checker
+        - thunderbird
         - python3-pip
+        - python3-venv
         - libreoffice
         - docker-compose
         - build-essential
         - liballegro5-dev
+        - python3-pygments
+        - python3-unittest2
+        - python3-linecache2
+        - python3-testresources
     snaps:
         - name: audacity
         - name: code
@@ -40,6 +53,9 @@ autoinstall:
         - sudo snap install audacity
         - sudo snap install code --classic 
         - sudo snap install blender --classic
+        - sudo snap install canonical-livepatch
+        - sudo mkdir /VirtualBox-VMs
+        - sudo chmod 777 /VistualBox-VMs
     codecs:
         install: true
     drivers:
