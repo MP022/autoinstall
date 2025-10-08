@@ -55,7 +55,7 @@ autoinstall:
         - sudo snap install blender --classic
         - sudo snap install canonical-livepatch
         - sudo mkdir /VirtualBox-VMs
-        - sudo chmod 777 /VistualBox-VMs
+        # - sudo chmod 777 /VistualBox-VMs
     codecs:
         install: true
     drivers:
