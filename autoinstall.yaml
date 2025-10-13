@@ -33,7 +33,6 @@ autoinstall:
         - apturl
         - vprerex
         - blueman
-        - appmenu
         - autogen
         - autoconf
         - automake
