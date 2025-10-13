@@ -45,13 +45,11 @@ autoinstall:
         - codeblocks
         - clusterssh
         - virtualbox
-        - python-pip
-        - python2-pip
-        - python3-pip
-        - python3-venv
         - cpu-checker
         - libreoffice
         - thunderbird
+        - python3-pip
+        - python3-venv
         - docker-compose
         - build-essential
         - liballegro5-dev
