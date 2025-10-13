@@ -13,27 +13,46 @@ autoinstall:
     packages:
         - git
         - vim
+        - a2ps
         - curl
         - gimp
         - htop
         - wget
         - meld
+        - tmux
+        - acpi
+        - caja
+        - acpid
+        - biber
+        - bison
         - plank
         - xterm
+        - atril
         - magnus
         - prerex
+        - apturl
         - vprerex
+        - blueman
+        - appmenu
+        - autogen
+        - autoconf
+        - automake
+        - aptitude
+        - autopoint
+        - asymptote
         - sharutils
         - docker.io
         - net-tools
         - codeblocks
         - clusterssh
         - virtualbox
-        - cpu-checker
-        - thunderbird
+        - python-pip
+        - python2-pip
         - python3-pip
         - python3-venv
+        - cpu-checker
         - libreoffice
+        - thunderbird
         - docker-compose
         - build-essential
         - liballegro5-dev
@@ -51,10 +70,11 @@ autoinstall:
           classic: true
     late-commands:
         - sudo snap install audacity
+        - sudo snap install thunderbird
         - sudo snap install code --classic 
         - sudo snap install blender --classic
         - sudo snap install canonical-livepatch
-        - sudo mkdir /VirtualBox-VMs
+        - mkdir /VirtualBox-VMs
         # - sudo chmod 777 /VistualBox-VMs
     codecs:
         install: true
