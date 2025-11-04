@@ -11,10 +11,11 @@ autoinstall:
         layout: br
     timezone: "America/Sao_Paulo"   
     packages:
+        - gv
         - git
         - vim
-        - a2ps
         - curl
+        - a2ps
         - gimp
         - htop
         - wget
@@ -22,34 +23,52 @@ autoinstall:
         - tmux
         - acpi
         - caja
+        - flex
         - acpid
         - biber
         - bison
         - plank
         - xterm
         - atril
+        - gdebi
+        - gedit
         - magnus
         - prerex
         - apturl
+        - finger
+        - feynmf
+        - fig2dev
         - vprerex
         - blueman
         - autogen
+        - enchant
+        - gettext
+        - grub-pc
+        - gsfonts
         - autoconf
         - automake
         - aptitude
+        - fakeroot
+        - gdbserver
+        - gdal-data
         - autopoint
         - asymptote
         - sharutils
         - docker.io
         - net-tools
+        - glibc-doc
         - codeblocks
         - clusterssh
         - virtualbox
+        - genisoimage
         - cpu-checker
         - libreoffice
         - thunderbird
         - python3-pip
+        - python3-dev
+        # - grpcio-tools
         - python3-venv
+        - python3-grpcio
         - docker-compose
         - build-essential
         - liballegro5-dev
