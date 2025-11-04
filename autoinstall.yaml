@@ -41,7 +41,6 @@ autoinstall:
         - vprerex
         - blueman
         - autogen
-        - enchant
         - gettext
         - grub-pc
         - gsfonts
