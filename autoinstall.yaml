@@ -65,7 +65,6 @@ autoinstall:
         - thunderbird
         - python3-pip
         - python3-dev
-        # - grpcio-tools
         - python3-venv
         - python3-grpcio
         - docker-compose
@@ -74,6 +73,7 @@ autoinstall:
         - python3-pygments
         - python3-unittest2
         - python3-linecache2
+        - python3-grpc-tools
         - python3-testresources
     snaps:
         - name: audacity
@@ -89,7 +89,9 @@ autoinstall:
         - sudo snap install code --classic 
         - sudo snap install blender --classic
         - sudo snap install canonical-livepatch
-        - mkdir /VirtualBox-VMs
+        - sudo pip install grpcio -U
+        - sudo pip install grpcio-tools -U
+        - sudo mkdir /VirtualBox-VMs
         # - sudo chmod 777 /VistualBox-VMs
     codecs:
         install: true
