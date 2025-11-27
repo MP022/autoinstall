@@ -89,9 +89,6 @@ autoinstall:
         - sudo snap install code --classic 
         - sudo snap install blender --classic
         - sudo snap install canonical-livepatch
-        - sudo apt install python3-pip
-        - sudo pip install grpcio -U --break-system-packages
-        - sudo pip install grpcio-tools -U --break-system-packages
         - sudo mkdir /VirtualBox-VMs
         # - sudo chmod 777 /VistualBox-VMs
     codecs:
