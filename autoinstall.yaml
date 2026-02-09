@@ -42,7 +42,6 @@ autoinstall:
         - blueman
         - autogen
         - gettext
-        - grub-pc
         - gsfonts
         - autoconf
         - automake
@@ -58,7 +57,6 @@ autoinstall:
         - glibc-doc
         - codeblocks
         - clusterssh
-        - virtualbox
         - genisoimage
         - cpu-checker
         - libreoffice
@@ -87,7 +85,11 @@ autoinstall:
           classic: true
         - name: canonical-livepatch
     late-commands:
-        # Cria a pasta no sistema de destino e define o usuário 'crc' como dono
+        # 1. Garantir que os repositórios estão atualizados antes de instalar o VirtualBox
+        - curtin in-target -- apt-get update
+        - curtin in-target -- apt-get install -y virtualbox
+        
+        # 2. Criar as pastas e ajustar permissões
         - curtin in-target -- mkdir -p /VirtualBox-VMs
         - curtin in-target -- chown crc:crc /VirtualBox-VMs
         - curtin in-target -- chmod 775 /VirtualBox-VMs
