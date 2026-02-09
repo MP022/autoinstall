@@ -62,14 +62,15 @@ autoinstall:
         - genisoimage
         - cpu-checker
         - libreoffice
-        - thunderbird
         - python3-pip
         - python3-dev
         - python3-venv
         - python3-grpcio
+        - python3-pytest
         - docker-compose
         - build-essential
         - liballegro5-dev
+        - python3-coverage
         - python3-pygments
         - python3-unittest2
         - python3-linecache2
@@ -77,20 +78,19 @@ autoinstall:
         - python3-testresources
     snaps:
         - name: audacity
+        - name: thunderbird
         - name: code
           channel: stable
           classic: true
         - name: blender
           channel: stable
           classic: true
+        - name: canonical-livepatch
     late-commands:
-        - sudo snap install audacity
-        - sudo snap install thunderbird
-        - sudo snap install code --classic 
-        - sudo snap install blender --classic
-        - sudo snap install canonical-livepatch
-        - sudo mkdir /VirtualBox-VMs
-        # - sudo chmod 777 /VistualBox-VMs
+        # Cria a pasta no sistema de destino e define o usuário 'crc' como dono
+        - curtin in-target -- mkdir -p /VirtualBox-VMs
+        - curtin in-target -- chown crc:crc /VirtualBox-VMs
+        - curtin in-target -- chmod 775 /VirtualBox-VMs
     codecs:
         install: true
     drivers:
