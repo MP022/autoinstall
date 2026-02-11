@@ -86,7 +86,7 @@ autoinstall:
         - name: canonical-livepatch
     late-commands:
         - curtin in-target -- sudo mkdir -p /VirtualBox-VMs
-        - curtin in-target -- sudo chown crc:crc /VirtualBox-VMs
+        # - curtin in-target -- sudo chown crc:crc /VirtualBox-VMs
         - curtin in-target -- sudo chmod 775 /VirtualBox-VMs
     codecs:
         install: true
