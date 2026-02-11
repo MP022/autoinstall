@@ -57,7 +57,6 @@ autoinstall:
         - glibc-doc
         - codeblocks
         - clusterssh
-        - virtualbox
         - genisoimage
         - cpu-checker
         - libreoffice
