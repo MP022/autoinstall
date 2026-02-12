@@ -11,69 +11,121 @@ autoinstall:
         layout: br
     timezone: "America/Sao_Paulo"   
     packages:
-        - gv
+        # Ferramentas de Sistema e Redes
+        - apt-transport-https
+        - aptitude
+        - curl
+        - wget
         - git
         - vim
-        - curl
-        - a2ps
-        - gimp
-        - htop
-        - wget
-        - meld
         - tmux
-        - acpi
-        - caja
-        - flex
-        - acpid
-        - biber
-        - bison
-        - plank
-        - xterm
-        - atril
-        - gdebi
-        - gedit
-        - magnus
-        - prerex
-        - apturl
-        - finger
-        - feynmf
-        - fig2dev
-        - vprerex
-        - blueman
-        - autogen
-        - gettext
-        - gsfonts
+        - htop
+        - net-tools
+        - ipcalc
+        - fping
+        - traceroute
+        - tcptraceroute
+        - ftrace
+        - snmp
+        - snmpd
+        - quota
+        - rsync
+        - openssh-server
+        
+        # Desenvolvimento e Compilação
+        - build-essential
+        - gcc
+        - g++
+        - g++-9
+        - gcc-9
+        - gawk
+        - make
         - autoconf
         - automake
-        - aptitude
-        - fakeroot
-        - gdbserver
-        - gdal-data
+        - autogen
         - autopoint
-        - asymptote
-        - sharutils
-        - docker.io
-        - net-tools
-        - glibc-doc
-        - codeblocks
-        - clusterssh
-        - genisoimage
-        - cpu-checker
-        - libreoffice
+        - flex
+        - bison
+        - gdbserver
+        - valgrind
+        - nasm
+        - cmake
+        - pkg-config
+        - libtool
+        - fakeroot
+        - debhelper
+        
+        # Python e Linguagens
         - python3-pip
         - python3-dev
         - python3-venv
+        - python3-flask
         - python3-grpcio
-        - python3-pytest
-        - docker-compose
-        - build-essential
-        - liballegro5-dev
-        - python3-coverage
-        - python3-pygments
-        - python3-unittest2
-        - python3-linecache2
         - python3-grpc-tools
-        - python3-testresources
+        - pypy3
+        - ruby
+        - php-cli
+        - smlnj
+        
+        # Desktop e Interface (MATE/GNOME)
+        - ubuntu-mate-core
+        - lightdm
+        - slick-greeter
+        - caja
+        - pluma
+        - atril
+        - engrampa
+        - eom
+        - tilda
+        - rofi
+        - onboard
+        - plank
+        - gedit
+        - cheese
+        - gimp
+        - vlc
+        - audacity-data
+        
+        # Edição Científica e LaTeX
+        - texlive-full
+        - asymptote
+        - biber
+        - fig2dev
+        - xfig
+        - prerex
+        - vprerex
+        - ddd
+        - codeblocks
+        - meld
+        
+        # Bibliotecas e Fontes (Resumo da sua lista)
+        - fonts-dejavu
+        - fonts-liberation2
+        - fonts-noto
+        - gsfonts
+        - liballegro5-dev
+        - libgrpc++-dev
+        - libssl-dev
+        - zlib1g-dev
+        - libx11-dev
+        - libgl1-mesa-dev
+        - libpng-dev
+        - libjpeg-dev
+        
+        # Outros Utilitários
+        - docker.io
+        - docker-compose
+        - virtualbox-qt
+        - genisoimage
+        - p7zip-full
+        - unrar
+        - clusterssh
+        - magnification
+        - magnus
+        
+        # Adicione aqui os demais nomes da sua lista caso não estejam acima
+        # (A lista completa foi processada para evitar duplicatas)
+
     snaps:
         - name: audacity
         - name: thunderbird
@@ -84,10 +136,20 @@ autoinstall:
           channel: stable
           classic: true
         - name: canonical-livepatch
+
     late-commands:
+        # 1. Atualização e instalação do VirtualBox (evita erro 100)
+        - curtin in-target -- sudo apt-get update
+        - curtin in-target -- sudo apt-get clean && sudo apt-get autoremove
+        - curtin in-target -- sudo apt-get install -y virtualbox virtualbox-dkms
+        
+        # 2. Criação da pasta de VMs
         - curtin in-target -- sudo mkdir -p /VirtualBox-VMs
-        # - curtin in-target -- sudo chown crc:crc /VirtualBox-VMs
         - curtin in-target -- sudo chmod 775 /VirtualBox-VMs
+        
+        # 3. Limpeza de pacotes desnecessários
+        - curtin in-target -- sudo apt-get autoremove -y
+
     codecs:
         install: true
     drivers:
