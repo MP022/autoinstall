@@ -25,7 +25,6 @@ autoinstall:
         - fping
         - traceroute
         - tcptraceroute
-        - ftrace
         - snmp
         - snmpd
         - quota
