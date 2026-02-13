@@ -117,7 +117,6 @@ autoinstall:
         - p7zip-full
         - unrar
         - clusterssh
-        - magnification
         - magnus
         
         # Adicione aqui os demais nomes da sua lista caso não estejam acima
