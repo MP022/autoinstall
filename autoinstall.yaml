@@ -135,16 +135,16 @@ autoinstall:
 
     late-commands:
         # 1. Atualização e instalação do VirtualBox (evita erro 100)
-        - curtin in-target -- sudo apt-get update
-        - curtin in-target -- sudo apt-get clean && sudo apt-get autoremove
-        - curtin in-target -- sudo apt-get install -y virtualbox virtualbox-dkms
+        - curtin in-target -- sudo apt update
+        - curtin in-target -- sudo apt clean && sudo apt-get autoremove
+        - curtin in-target -- sudo apt install -y virtualbox virtualbox-dkms
         
         # 2. Criação da pasta de VMs
         - curtin in-target -- sudo mkdir -p /VirtualBox-VMs
         - curtin in-target -- sudo chmod 775 /VirtualBox-VMs
         
         # 3. Limpeza de pacotes desnecessários
-        - curtin in-target -- sudo apt-get autoremove -y
+        - curtin in-target -- sudo apt autoremove -y
 
     codecs:
         install: true
