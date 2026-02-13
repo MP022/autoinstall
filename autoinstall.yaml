@@ -113,7 +113,6 @@ autoinstall:
         # Outros Utilitários
         - docker.io
         - docker-compose
-        - virtualbox-qt
         - genisoimage
         - p7zip-full
         - unrar
