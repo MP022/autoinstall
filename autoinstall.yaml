@@ -30,6 +30,7 @@ autoinstall:
         - quota
         - rsync
         - openssh-server
+        - linux-headers-generic
         
         # Desenvolvimento e Compilação
         - build-essential
@@ -83,7 +84,6 @@ autoinstall:
         - cheese
         - gimp
         - vlc
-        - audacity-data
         
         # Edição Científica e LaTeX
         - asymptote
@@ -135,9 +135,9 @@ autoinstall:
 
     late-commands:
         # 1. Atualização e instalação do VirtualBox (evita erro 100)
-        - curtin in-target -- sudo apt update
-        - curtin in-target -- sudo apt clean && sudo apt-get autoremove
-        # - curtin in-target -- sudo apt install -y virtualbox virtualbox-dkms
+        - curtin in-target -- sudo apt-get update
+        - curtin in-target -- sudo apt-get clean && sudo apt-get autoremove
+        - curtin in-target -- sudo apt-get install virtualbox
         
         # 2. Criação da pasta de VMs
         - curtin in-target -- sudo mkdir -p /VirtualBox-VMs
