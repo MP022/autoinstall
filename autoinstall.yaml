@@ -15,6 +15,7 @@ autoinstall:
         - apt-transport-https
         - aptitude
         - curl
+        - dkms
         - wget
         - git
         - vim
@@ -134,11 +135,22 @@ autoinstall:
         - name: canonical-livepatch
 
     late-commands:
-        # 1. Atualização e instalação do VirtualBox (evita erro 100)
         - curtin in-target -- sudo apt-get update
         - curtin in-target -- sudo apt-get clean && sudo apt-get autoremove
-        - curtin in-target -- sudo apt-get install virtualbox
         
+        # 1. Instalar pacotes necessários para adicionar o repositório
+        - curtin in-target -- apt-get install -y wget gpg
+        
+        # 2. Adicionar a chave GPG do VirtualBox
+        - curtin in-target -- /bin/bash -c "wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | gpg --dearmor -o /usr/share/keyrings/oracle-virtualbox.gpg"
+        
+        # 3. Adicionar o repositório do VirtualBox (para Ubuntu 22.04/24.04)
+        - curtin in-target -- /bin/bash -c "echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox.gpg] https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib' | tee /etc/apt/sources.list.d/virtualbox.list"
+        
+        # 4. Atualizar repositórios e instalar o VirtualBox
+        - curtin in-target -- apt-get update
+        - curtin in-target -- apt-get install -y virtualbox-7.0
+
         # 2. Criação da pasta de VMs
         - curtin in-target -- sudo mkdir -p /VirtualBox-VMs
         - curtin in-target -- sudo chmod 775 /VirtualBox-VMs
