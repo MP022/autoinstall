@@ -166,7 +166,6 @@ autoinstall:
         - magnus
         - make
         - manpages-posix-dev
-        - mate-desktop-environment
         - meld
         - ml-lex
         - ml-yacc
@@ -222,7 +221,6 @@ autoinstall:
         - ubuntu-desktop
         - ubuntu-desktop-minimal
         - ubuntu-keyring
-        - ubuntu-mate-core
         - ubuntu-minimal
         - ubuntu-settings
         - ubuntu-standard
